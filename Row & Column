@@ -1,35 +1,43 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text('I\'m an App'),
-          backgroundColor: Colors.teal[600],
-        ),
-        body: App(),
-      ),
-    ),
-  );
+  runApp(MyApp());
 }
 
-class App extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.blue,
-      margin: EdgeInsets.only(top: 20, right: 50),
-      child: Container(
-        color: Colors.green,
-        // Add 200px on top and bottom
-        margin: EdgeInsets.symmetric(vertical: 200),
-        child: Container(
-          color: Colors.yellow,
-          margin: EdgeInsets.fromLTRB(0, 20, 200, 20),
-        ),
+    return MaterialApp(
+        home: Scaffold(
+      backgroundColor: Colors.teal,
+      body: new Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          new Container(
+            width: 100,
+            color: Colors.red,
+          ),
+          new Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              new Container(
+                width: 100,
+                height: 100,
+                color: Colors.yellow[600],
+              ),
+              new Container(
+                width: 100,
+                height: 100,
+                color: Colors.green[600],
+              )
+            ],
+          ),
+          new Container(
+            width: 100,
+            color: Colors.blue,
+          )
+        ],
       ),
-    );
+    ));
   }
 }
